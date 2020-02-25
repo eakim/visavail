@@ -879,7 +879,10 @@
 						redrawTooltipWhenOut(this)
 					})
 					.on('click', function(d,i){
-						options.onClickBlock.call(this, d,i);
+						//options.onClickBlock.call(this, d,i);
+						if(custom_options.onclick){
+							custom_options.onclick.call(this,d,i)
+						}
 					})
 					.on("mousemove", function(){
 						redrawTooltipWhenMoved(d3.event.layerX, d3.event.layerY, this)
